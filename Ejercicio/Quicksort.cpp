@@ -4,55 +4,55 @@
 
 using namespace std;
 
-int mitad(int a[], int pinicial, int pfinal);
-void ordenar(int a[], int pinicial, int pfinal);
+int middle(int a[], int pInitial, int pFinal);
+void sort(int a[], int pInitial, int pFinal);
 
 
 int main()
 {
 	int A[10] = { 123,-6,13,-33,-98,333,23,-5,0,-100 };
-	ofstream archivo;
-	string nombreA;
-	cout << "Ingrese el nombre del archivo: ";
-	getline(cin, nombreA);
-	archivo.open(nombreA.c_str(), ios::out);
+	ofstream file;
+	string nameA;
+	cout << "Ingrese el nombre del file: ";
+	getline(cin, nameA);
+	file.open(nameA.c_str(), ios::out);
 
-	cout << "Antes de ordenar: " << endl;
-	archivo << "Antes de ordenar: " << endl;
+	cout << "Antes de sort: " << endl;
+	file << "Antes de sort: " << endl;
 	for (int i = 0; i < 10; i++)
 	{
 		cout << A[i] << " ";
-		archivo << A[i] << " ";
+		file << A[i] << " ";
 	}
 
-	ordenar(A, 0, 9);
+	sort(A, 0, 9);
 	cout << endl;
-	archivo << endl;
-	cout << "Despues de ordenar: " << endl;
-	archivo << "Despues de ordenar: " << endl;
+	file << endl;
+	cout << "Despues de sort: " << endl;
+	file << "Despues de sort: " << endl;
 	for (int i = 0; i < 10; i++)
 	{
 		cout << A[i] << " ";
-		archivo << A[i] << " ";
+		file << A[i] << " ";
 	}
-	archivo.close();
+	file.close();
 
 
 	return 0;
 }
 
-int mitad(int a[], int pinicial, int pfinal)
+int middle(int a[], int pInitial, int pFinal)
 {
-	return a[(pinicial + pfinal) / 2];
+	return a[(pInitial + pFinal) / 2];
 
 }
 
-void ordenar(int a[], int pinicial, int pfinal)
+void sort(int a[], int pInitial, int pFinal)
 {
-	int i = pinicial;
-	int j = pfinal;
+	int i = pInitial;
+	int j = pFinal;
 	int temp;
-	int piv = mitad(a, pinicial, pfinal);
+	int piv = middle(a, pInitial, pFinal);
 
 	do
 	{
